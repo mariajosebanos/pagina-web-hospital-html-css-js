@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+
+    <!-- Canal de noticias -->
+    <channel>
+
+        <title>Hospital de alta resolución de Roquetas de Mar</title>
+        <link>https://www.hospitalroquetas.es</link>
+        <description>
+            Noticias y novedades sobre el Hospital de Alta Resolución de Roquetas de Mar
+        </description>
+        <managingEditor>mariajosebs94@gmail.com (María José Baños Saldaña)</managingEditor>
+        <language>es-ES</language>
+
+        <!-- Fecha de la última noticia publicada -->
+        <pubDate>Mon, 15 Dec 2025 10:00:00 GMT</pubDate>
+
+        <!-- Categorías del canal -->
+        <category>Divulgación</category>
+        <category>Ciencia y tecnología</category>
+        <category>Novedades</category>
+
+        <!-- Noticia 1: Inventada -->
+        <item>
+            <title>Inauguración del hospital de Alta Resolución de Roquetas de Mar</title>
+            <link>https://www.hospitalroquetas.es/inauguracion</link>
+            <guid>https://www.hospitalroquetas.es/inauguracion</guid>
+            <category>Novedades</category>
+            <pubDate>Mon, 15 Dec 2025 10:00:00 GMT</pubDate>
+            <description>
+                El hospital de Alta Resolución de Roquetas de Mar abre sus puertas para ofrecer
+                una atención sanitaria moderna, cercana y de calidad. El nuevo centro cuenta con
+                servicios de atención primaria, pediatría, urgencias y cirugía, mejorando la
+                asistencia sanitaria en el municipio.
+            </description>
+        </item>
+
+        <!-- Noticia 2: Real (Torrecárdenas) -->
+        <item>
+            <title>
+                El Hospital Universitario Torrecárdenas celebra el III Encuentro sobre Neurocirugía
+            </title>
+            <link>https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/todas-noticia/el-hospital-universitario-torrecardenas-celebra-el-iii-encuentro-sobre-neurocirugia-centrado-en-la</link>
+            <guid>https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/todas-noticia/el-hospital-universitario-torrecardenas-celebra-el-iii-encuentro-sobre-neurocirugia-centrado-en-la</guid>
+            <category>Ciencia y tecnología</category>
+            <pubDate>Fri, 31 Oct 2025 12:00:00 GMT</pubDate>
+            <description>
+                El Hospital Universitario Torrecárdenas ha celebrado el III Encuentro de
+                Neurocirugía,
+                centrado en la innovación tecnológica y los avances científicos aplicados a esta
+                especialidad médica, con la participación de profesionales de referencia a nivel
+                nacional.
+            </description>
+        </item>
+
+    </channel>
+</rss>

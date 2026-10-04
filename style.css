@@ -1,0 +1,283 @@
+/* Autor/a: María José Baños Saldaña */
+
+/*
+Hoja de estilos principal del sitio web
+Hospital de Alta Resolución de Roquetas de Mar
+*/
+
+/* Tipografía base de la página web */
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+/* -- ENCABEZADO Y NAVEGACIÓN -- */
+
+/* Encabezado principal de la página */
+header {
+  background-color: #112d4e;
+  padding: 1.5em 1em;
+  margin-bottom: 1em;
+}
+
+/* Icono que acompaña al título principal */
+.icono-titulo {
+  height: 40px;
+  vertical-align: text-bottom;
+  margin-right: 0.2em;
+}
+
+/* Título principal de la página web */
+h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  color: #f9f7f7;
+  margin-bottom: 1.5em;
+}
+
+/* Contenedor del menú de navegación */
+nav {
+  text-align: center;
+}
+
+/* Enlaces del menú de navegación */
+nav .menu {
+  display: inline-block;
+  min-width: 110px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+
+  text-decoration: none;
+  color: #f9f7f7;
+
+  border: 2px solid #dbe2ef;
+  border-radius: 2em;
+  background-color: transparent;
+
+  margin-right: 0.6em;
+}
+
+/* Efecto hover en los enlaces del menú */
+nav .menu:hover {
+  background-color: #dbe2ef;
+  color: #112d4e;
+  border: 2px solid #3f72af;
+}
+
+/* -- TÍTULOS DE SECCIÓN -- */
+
+/* Iconos que acompañan a los títulos de sección */
+.icono-seccion {
+  height: 25px;
+}
+
+/* Estilo común para los títulos de cada sección */
+h2 {
+  font-size: 25px;
+  color: #112d4e;
+  border-bottom: 2px solid #dbe2ef;
+  background-color: #fff; /* Color de fondo añadido para poder intercambiar colores en el DOM */
+}
+
+/* -- SECCIÓN INICIO -- */
+
+/* Banner principal de la sección inicio */
+#banner-inicio {
+  width: 100%;
+  height: 45vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* Texto destacado para la sección Inicio */
+#inicio strong {
+  color: #112d4e;
+}
+
+/* Texto introductorio de la lista de servicios */
+#inicio span {
+  font-weight: bold;
+}
+
+/* Lista de servicios con estilo personalizado */
+#lista-servicios {
+  color: #3f72af;
+  font-weight: bold;
+  list-style-type: square;
+}
+
+/* -- SECCIÓN SERVICIOS --*/
+
+/* Galería de servicios organizada mediante CSS Grid */
+.galeria-servicios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+  margin-top: 1.5em;
+}
+
+/* Contenedor individual de cada servicio */
+.servicio {
+  text-align: center;
+}
+
+/* Imágenes de los servicios */
+.servicio img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 0.5em;
+}
+
+/* Nombre del servicio */
+.servicio p {
+  margin-top: 0.5em;
+  font-weight: bold;
+  color: #112d4e;
+}
+
+/* Efecto visual al pasar el ratón por las imágenes */
+.servicio img:hover {
+  transform: scale(1.1);
+  filter: grayscale(1);
+}
+
+/* -- SECCIÓN HORARIO -- */
+
+/* Tabla de horarios */
+.tabla-horario {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5em;
+}
+
+/* Título de la tabla */
+.tabla-horario caption {
+  font-weight: bold;
+  color: #112d4e;
+  margin-bottom: 0.6em;
+}
+
+/* Cabecera de la tabla */
+.tabla-horario th {
+  padding: 0.6em;
+  text-align: center;
+  border: 2px solid #3f72af;
+  color: #f5f7fa;
+  background-color: #112d4e;
+}
+
+/* Celdas de contenido de la tabla */
+.tabla-horario td {
+  padding: 0.6em;
+  text-align: center;
+  border: 1px solid #dbe2ef;
+  background-color: #f5f7fa;
+}
+
+/* -- SECCIÓN CONTACTO - FORMULARIO -- */
+
+/* Contenedor general del formulario */
+.formulario-contacto {
+  max-width: 600px;
+  margin-top: 1.5em;
+}
+
+/* Bloques individuales del formulario */
+.bloque-formulario {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Etiquetas y textos descriptivos del formulario */
+.bloque-formulario label,
+.bloque-formulario span {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+  color: #112d4e;
+}
+
+/* Estilos comunes para los campos del formulario */
+input,
+select,
+textarea {
+  padding: 0.5em;
+  border: 1px solid #dbe2ef;
+  border-radius: 0.4em;
+  font-family: inherit;
+}
+
+/* Botón de envío del formulario */
+.boton-enviar {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.6em 1.6em;
+  background-color: #112d4e;
+  color: #f9f7f7;
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+}
+
+/* Botón de borrar el formulario */
+.boton-borrar {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.6em 1.6em;
+  background-color: #112d4e;
+  color: #f9f7f7;
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+}
+
+/* -- PIE DE PÁGINA -- */
+
+/* Imágenes de los enlaces del footer */
+.enlaces-footer img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* Estilos generales del footer */
+footer {
+  background-color: #112d4e;
+  color: #f9f7f7;
+  padding: 1em;
+  font-size: 14px;
+}
+
+/* Título del bloque de información del footer */
+.informacion-footer h3 {
+  margin-top: 0;
+  color: #dbe2ef;
+}
+
+/* Párrafos del footer */
+.informacion-footer p {
+  margin-bottom: 1em;
+}
+
+/* Línea separadora del footer */
+footer hr {
+  border: none;
+  border-top: 1px solid #3f72af;
+  margin: 1.5em 0;
+}
+
+/* Contenedor de enlaces al canal de noticias y a las capturas de las validaciones */
+.enlaces-footer {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Enlaces del footer */
+.enlaces-footer a {
+  display: flex;
+  align-items: center;
+}

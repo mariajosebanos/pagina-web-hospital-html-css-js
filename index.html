@@ -1,0 +1,364 @@
+<!doctype html>
+
+<!--Autor/a: María José Baños Saldaña -->
+
+<html lang="es">
+
+<head>
+  <!-- Codificación UTF-8 para asegurar la correcta visualización de caracteres especiales -->
+  <meta charset="UTF-8" />
+  <!-- Título que aparecerá en la pestaña del navegador -->
+  <title>Hospital de Alta Resolución (HAR) de Roquetas de Mar</title>
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <!-- Gama de fuentes importada desde Google Fonts y utilizada en el diseño -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&family=Work+Sans:wght@300" rel="stylesheet" />
+  <!-- Script de Javascript para la manipulación dinámica del DOM-->
+  <script>
+    // En primer lugar, le pedimos al navegador que cargue primero la página web antes de ejecutar el script
+    document.addEventListener("DOMContentLoaded", function () {
+      // -- CREACIÓN DE UN PÁRRAFO DE FORMA DINÁMICA --
+
+      // Creamos el elemento párrafo
+      const parrafoBienvenida = document.createElement("p");
+
+      // Creamos el texto de bienvenida
+      const textoBienvenida = document.createTextNode(
+        "Bienvenido/a al sitio web del Hospital de Alta Resolución de Roquetas de Mar.",
+      );
+
+      // Añadimos el texto al párrafo
+      parrafoBienvenida.appendChild(textoBienvenida);
+
+      // Aplicamos estilos diretamente al párrafo
+      parrafoBienvenida.style.marginLeft = "100px";
+      parrafoBienvenida.style.marginRight = "100px";
+      parrafoBienvenida.style.textAlign = "center";
+      parrafoBienvenida.style.backgroundColor = "#dbe2ef";
+      parrafoBienvenida.style.fontWeight = "bold";
+      parrafoBienvenida.style.color = "#112d4e";
+      parrafoBienvenida.style.borderRadius = "10px";
+      parrafoBienvenida.style.padding = "1em";
+
+      // Seleccionamos las secciones Inicio y Servicios
+      const seccionInicio = document.getElementById("inicio");
+      const seccionServicios = document.getElementById("servicios");
+
+      // Insertamos el nuevo párrafo creado entre ambas secciones
+      seccionInicio.parentNode.insertBefore(
+        parrafoBienvenida,
+        seccionServicios,
+      );
+
+      // -- MODIFICACIÓN DE FORMA DINÁMICA DEL TÍTULO HORARIO --
+
+      // Seleccionamos el título Horario
+      const tituloHorario = document.getElementById("titulo-horario");
+
+      // Guardamos el icono del título
+      const iconoHorario = tituloHorario.querySelector("img");
+
+      // Obtenemos los colores actuales
+      const colorTexto = window.getComputedStyle(tituloHorario).color;
+      const colorFondo =
+        window.getComputedStyle(tituloHorario).backgroundColor;
+
+      // Eliminamos el texto original del H2 manteniendo el icono
+      while (tituloHorario.childNodes.length > 1) {
+        tituloHorario.removeChild(tituloHorario.lastChild);
+      }
+
+      // Volvemos a añadir el icono
+      tituloHorario.appendChild(iconoHorario);
+
+      // Creamos el nuevo texto
+      const nuevoTexto = document.createTextNode(
+        " Horario de atención al público",
+      ); // Añadimos un espacio al inicio para que el texto no quede pegado al icono
+
+      // Insertamos el nuevo texto
+      tituloHorario.appendChild(nuevoTexto);
+
+      // Intercambiamos los colores
+      tituloHorario.style.color = colorFondo;
+      tituloHorario.style.backgroundColor = colorTexto;
+      tituloHorario.style.padding = "0.4em";
+
+      // -- ELIMINACIÓN DEL ÚLTIMO ELEMENTO DE LA LISTA DESORDENADA DE FORMA DINÁMICA --
+
+      // Seleccionamos la lista desordenada de servicios
+      const listaServicios = document.getElementById("lista-servicios");
+
+      // Añadimos el evento click a la lista
+      listaServicios.addEventListener("click", function () {
+        // Obtenemos el último elemento de la lista
+        const ultimoElemento = listaServicios.lastElementChild;
+
+        // Borraremos el último elemento mientras haya elementos en la lista
+        if (ultimoElemento !== null) {
+          listaServicios.removeChild(ultimoElemento);
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <!-- Encabezado principal que incluye el título de la página y el menú de navegación -->
+  <header>
+    <h1>
+      <img class="icono-titulo" src="img/logo_junta_azul.svg" alt="Logo de la Junta de Andalucía en color azul" />
+      Hospital de Alta Resolución (HAR) de Roquetas de Mar
+    </h1>
+
+    <!-- Menú de navegación que contiene enlaces a las diferentes secciones de la página web -->
+    <nav>
+      <a class="menu" href="#inicio">Inicio</a>
+      <a class="menu" href="#servicios">Servicios</a>
+      <a class="menu" href="#horario">Horario</a>
+      <a class="menu" href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal de la página web -->
+  <main>
+    <!-- Sección Inicio: presentación del hospital -->
+    <section id="inicio">
+      <img id="banner-inicio" src="img/banner-hospital.png" alt="Imagen del Hospital de Roquetas de Mar" />
+
+      <h2>
+        <img class="icono-seccion" src="img/icono-inicio.png" alt="Icono de una cruz azul" />
+        Inicio
+      </h2>
+
+      <p class="descripcion">
+        <strong>El Hospital de Alta Resolución de Roquetas de Mar</strong>
+        es un centro sanitario moderno, diseñado para ofrecer una atención
+        sanitaria cercana, eficiente y de calidad a la población del municipio
+        y su entorno. El hospital cuenta con instalaciones innovadoras y un
+        equipo de profesionales especializados, orientados a mejorar la
+        accesibilidad a los servicios sanitarios y a reducir los tiempos de
+        espera, garantizando una atención integral y personalizada a los
+        pacientes.
+      </p>
+
+      <span>Nuestros servicios incluyen:</span>
+
+      <ul id="lista-servicios">
+        <li>Atención primaria</li>
+        <li>Pediatría</li>
+        <li>Urgencias</li>
+        <li>Cirugía</li>
+      </ul>
+    </section>
+
+    <!-- Sección Servicios: galería de imágenes correspondientes a cada servicio proporcionado por el hospital  -->
+    <section id="servicios">
+      <h2>
+        <img class="icono-seccion" src="img/icono-servicios.png" alt="Icono de un equipo médico" />
+        Servicios
+      </h2>
+
+      <!-- Galería de imágenes -->
+      <div class="galeria-servicios">
+        <div class="servicio">
+          <img src="img/atencion-primaria.png" alt="Consulta de atención primaria" />
+          <p>Atención Primaria</p>
+        </div>
+
+        <div class="servicio">
+          <img src="img/pediatria.png" alt="Consulta de pediatría" />
+          <p>Pediatría</p>
+        </div>
+
+        <div class="servicio">
+          <img src="img/urgencias.png" alt="Sala de urgencias" />
+          <p>Urgencias</p>
+        </div>
+
+        <div class="servicio">
+          <img src="img/cirugia.jpg" alt="Quirófano del área de cirugía" />
+          <p>Cirugía</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Horario: tabla informativa con los horarios del hospital -->
+    <section id="horario">
+      <h2 id="titulo-horario">
+        <img class="icono-seccion" src="img/icono-horario.png" alt="Icono de una agenda de citas en color azul" />
+        Horario
+      </h2>
+
+      <!-- Tabla con combinación de celdas mediante colspan y rowspan -->
+      <table class="tabla-horario">
+        <caption>
+          Horario de Atención al Público
+        </caption>
+
+        <!-- Se utiliza thead y tbody para diferenciar semánticamente cabecera y contenido -->
+        <thead>
+          <tr>
+            <th>Servicio</th>
+            <th>Lunes a Viernes</th>
+            <th>Sábados</th>
+            <th>Domingos</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Atención Primaria</td>
+            <td>08:00h a 15:00h</td>
+            <td colspan="2">Cerrado</td>
+          </tr>
+
+          <tr>
+            <td>Pediatría</td>
+            <td>08:00h a 14:00h</td>
+            <td colspan="2">Cerrado</td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">Urgencias</td>
+            <td colspan="3">24 horas</td>
+          </tr>
+
+          <tr>
+            <td colspan="3">Atención continuada durante festivos</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Sección Contacto: formulario para solicitar información o pedir cita -->
+    <section id="contacto">
+      <h2>
+        <img class="icono-seccion" src="img/icono-contacto.png" alt="Icono de una agenda de citas en color azul" />
+        Contacto
+      </h2>
+
+      <!-- Formulario de contacto utilizando los tipos de campo más adecuados según el tipo de información solicitada -->
+      <form class="formulario-contacto">
+        <!-- Campo para introducir nombre y apellidos (requeridos) -->
+        <div class="bloque-formulario">
+          <label for="nombre">Nombre y apellidos:</label>
+          <input type="text" id="nombre" name="nombre_usuario" required />
+        </div>
+
+        <!-- Campo para introducir la dirección email (requerido) -->
+        <div class="bloque-formulario">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <!-- Campo para introducir un teléfono de contacto -->
+        <div class="bloque-formulario">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" />
+        </div>
+
+        <!-- Menú desplegable para escoger el motivo de la consulta -->
+        <div class="bloque-formulario">
+          <label for="motivo">Motivo de la consulta:</label>
+          <select id="motivo" name="motivo">
+            <option value="atencion-primaria">Atención Primaria</option>
+            <option value="pediatria">Pediatría</option>
+            <option value="urgencias">Urgencias</option>
+            <option value="cirugia">Cirugía</option>
+          </select>
+        </div>
+
+        <!-- Campo para introducir comentarios. Puede recoger uno o dos párrafos (rows = 4) -->
+        <div class="bloque-formulario">
+          <label for="comentarios">Comentarios:</label>
+          <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+        </div>
+
+        <!-- Menú radial para elegir la forma de contacto preferida -->
+        <div class="bloque-formulario">
+          <span>Preferencia de contacto:</span>
+          <label>
+            <input type="radio" name="preferencia" value="email" />
+            Email
+          </label>
+          <label>
+            <input type="radio" name="preferencia" value="telefono" />
+            Teléfono
+          </label>
+          <!-- Ambas opciones (input) tienen el mismo nombre para que solo se pueda escoger una de ellas -->
+        </div>
+
+        <!-- Calendario que permite escoger la fecha de la cita -->
+        <div class="bloque-formulario">
+          <label for="fecha">Fecha de la cita:</label>
+          <input type="date" id="fecha" name="fecha" />
+        </div>
+
+        <!-- Desplegable que permite escoger la hora de la cita -->
+        <div class="bloque-formulario">
+          <label for="hora">Hora de la cita:</label>
+          <input type="time" id="hora" name="hora" />
+        </div>
+
+        <!-- Botones de chequeo para aceptar la política de privacidad (requerida) y si el usuario desea o no recibir noticias y promociones -->
+        <div class="bloque-formulario">
+          <label>
+            <input type="checkbox" name="privacidad" required />
+            Acepto la política de privacidad
+          </label>
+          <label>
+            <input type="checkbox" name="noticias" />
+            Acepto recibir noticias y promociones
+          </label>
+        </div>
+
+        <!-- Botón para enviar los datos introducidos en el formulario -->
+        <button type="submit" class="boton-enviar">Enviar</button>
+        <button type="reset" class="boton-borrar">Borrar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Datos del hospital, datos del alumno, enlace al canal RSS, enlace a las capturas y validaciones de los documentos -->
+    <div class="informacion-footer">
+      <h3>Hospital de Alta Resolución de Roquetas de Mar</h3>
+      <p>
+        <strong>Dirección:</strong> Entre Avenida Cerillos y calle Ánade,
+        Roquetas de Mar (Almería)<br />
+        <strong>Teléfono:</strong> 950 000 000<br />
+        <strong>Email:</strong> hospitaldealtaresolucion@roquetasdemar.es
+      </p>
+      <!-- Información del autor del trabajo -->
+      <p>
+        <strong>Autor/a:</strong> María José Baños Saldaña<br />
+        <strong>Módulo:</strong> LMSGI<br />
+        <strong>Curso:</strong> 2025/26<br />
+      </p>
+    </div>
+
+    <hr />
+    <!-- Línea horizontal -->
+
+    <!-- Enlaces a las capturas de validación -->
+    <div class="enlaces-footer">
+      <a href="/feed/rss.xml">
+        <img src="img/Feed-icon.svg.png" alt="Canal RSS" />
+      </a>
+
+      <a href="img/validacion-rss.png" target="_blank">
+        <img src="img/W3C®_Icon.svg.png" alt="Validación RSS" />
+      </a>
+
+      <a href="img/validacion-html.png" target="_blank">
+        <img src="img/HTML5_logo_and_wordmark.svg.png" alt="Validación HTML" />
+      </a>
+      <a href="img/validacion-css.png" target="_blank">
+        <img src="img/Official_CSS_Logo.svg.png" alt="Validación CSS" />
+      </a>
+    </div>
+  </footer>
+</body>
+
+</html>
